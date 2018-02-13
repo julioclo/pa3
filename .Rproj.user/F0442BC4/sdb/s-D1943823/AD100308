@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"index.Rmd\"\nauthor: \"Julio Lopez\"\ndate: \"2/13/2018\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n",
+    "created" : 1518557966543.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3967383361",
+    "id" : "AD100308",
+    "lastKnownWriteTime" : 1518558038,
+    "last_content_update" : 1518558038991,
+    "path" : "~/Desktop/pa3/index.Rmd",
+    "project_path" : "index.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
