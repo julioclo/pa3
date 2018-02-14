@@ -1,17 +1,18 @@
 {
     "collab_server" : "",
-    "contents" : "---\ntitle: \"index.Rmd\"\nauthor: \"Julio Lopez\"\ndate: \"2/13/2018\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n",
+    "contents" : "---\ntitle: \"index.Rmd\"\nauthor: \"Julio Lopez\"\ndate: \"`r Sys.Date()`\"\noutput: \n  html_document: \n    highlight: pygments\n    theme: cerulean\n    toc: yes\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n## pa3\n1. Load the dataset of your choice and get information about its structure\n```{r}\nlibrary(tidyverse)\nlibrary(languageR)\n\nstr(selfPacedReadingHeid)\n# I have loaded the dataset I am going to work with.\n# I have looked at its structure\n```\n2. Tidy the dataset (every variable gets a column, every observation occupies a single row), if necessary.\n```{r}\nstr(selfPacedReadingHeid)\nmy_data <- selfPacedReadingHeid %>%\n  select(., x = RT1WordLater, y = RT)\n# The dataset seems to be tidied.\n# I have created a new dataset with the variables I am interested in.\n```\n3. Calculate descriptive statistics of your choice.\n```{r}\nmy_data %>%\n  ggplot(., aes(x = x, y = y)) +\n  geom_point() +\n  geom_smooth(method = 'lm') +\n  labs(x = 'Reaction Time in Following Word', y = 'Reaction Time in -Heid word')\n\n# I have made a scatterplot using the two variables and set lm through the data.\n```\nThe mean reaction time for -Heid word was `r mean(my_data$y)`, with a standard deviation of `r sd(my_data$y)`. The median was `r median(my_data$y)`.\nOn the other hand, the mean reaction time for the word following the -Heid words was `r mean(my_data$x)`, with a standard deviation of `r median(my_data$x)`, while the median was `r sd(my_data$x)`.\n\n4. Select two continuous variables and fit a model to the data (bivariate regression).\n```{r}\nmyfit <- lm(x ~ y, data = my_data)\nsummary(myfit)\n# I had already selected my variables before.\n```\n5. Generate a plot that includes a regression line.\n```{r}\nmy_data %>%\n  ggplot(., aes(x = x, y = y)) +\n  geom_point() +\n  geom_smooth(method = 'lm') +\n  labs(x = 'Reaction Time in Following Word', y = 'Reaction Time in -Heid word')\n# I had already created this plot above; plots help me visualize the data.\n```\n6. Write up some general observations (1-2 paragraphs max)\n\nThe linear model fit in the data shows that there exists a positive correlation between y (Reaction Time in the -Heid Word) and x (Reaction Time in Word Following the -Heid Word). Specifically, as Y increases in one unit, X increases in 0.21274 units.\n\nHowever, the multiple R-squared is 0.07445 and the adjusted R-squared is 0.07373. According to Lewis-Beck, a value over .90 is necessary for the results to be trustwhorty in the hard sciences and .30 in the social sciences. Therefore, our results are not reliable: Reaction Time in -Heid Words are not a predictor for Reaction Time in the Following Word.\n",
     "created" : 1518557966543.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3967383361",
+    "hash" : "3533620114",
     "id" : "AD100308",
-    "lastKnownWriteTime" : 1518558038,
-    "last_content_update" : 1518558038991,
+    "lastKnownWriteTime" : 1518568500,
+    "last_content_update" : 1518568500189,
     "path" : "~/Desktop/pa3/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
+        "last_setup_crc32" : "B58D3B3Cbb338d19",
         "tempName" : "Untitled1"
     },
     "relative_order" : 1,
